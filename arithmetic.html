@@ -18,12 +18,22 @@
     
     <p id="result" class="card" style="width: 24rem; margin-top:20px;text-align: center;" >This shows in result 5
     </p>
+    <form>
+        <input type ="radio"  id="addittion"  onclick="processRadio()" name="calculation" value="plus"> 
+    <label for="form2_plus">+ </label><br>
+    <input type ="radio" id="subraction"  onclick="processRadio()" name="calculation" value="minus"> 
+    <label for="form2_minus">- </label><br>
+    <input type ="radio" id="multiplication"  onclick="processRadio()" name="calculation" value="times"> 
+    <label for="form2_times">* </label><br>
+    <input type ="radio" id="divison"  onclick="processRadio()" name="calculation" value="divide"> 
+    <label for="form2_divide">/ </label><br>
+   
+
     
+</form>
 
-
-
-
-
+<p id="result1" class="card" style="width: 24rem; margin-top:20px;text-align: center;">This shows in result 6 </p>
+ </form>
 
     <script>
     function permutations(){
@@ -39,18 +49,31 @@
         out = document.getElementById("result")
         out.innerHTML = product
     }
+
+    function processRadio(){
+    
+    var first = document.getElementById("num1").value
+    var second = document.getElementById("num2").value
+    first=parseInt(first);
+    second=parseInt(second);
+    
+    
+    out = document.getElementById("result1")
+    if(document.getElementById("addittion").checked){
+        out.innerHTML = first+second;
+        
+    }else if(document.getElementById("subraction").checked){
+        out.innerHTML = first-second;
+    }else if(document.getElementById("multiplication").checked){
+        out.innerHTML = first*second;
+    }else{
+        out.innerHTML = first/second;
+    }
+    
+}
         
 </script>
 
-
-
-
-
-
-
 </body>
-
-
-
 
 </html>
